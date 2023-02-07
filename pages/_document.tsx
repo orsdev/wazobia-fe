@@ -5,7 +5,7 @@ class Document extends NextDocument {
     return (
       <Html lang="en">
         <Head>
-          <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
+          <meta charSet="utf-8" />
           <meta name="description" content="Hivedeck Developer's Assessment" />
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
