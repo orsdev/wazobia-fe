@@ -19,15 +19,34 @@ export const theme = {
 
       html: {
         boxSizing: 'border-box',
-        fontSize: '62.5%',
         fontFamily: "'Open Sans', sans-serif"
       },
 
       body: {
         boxSizing: 'border-box',
         overflowX: 'hidden',
-        fontWeight: 500,
       },
+
+      ".editor__wrapper": {
+        h1: {
+          fontSize: '3rem',
+        },
+        h2: {
+          fontSize: '2.5rem',
+        },
+        h3: {
+          fontSize: '2rem',
+        },
+        h4: {
+          fontSize: '1.5rem',
+        },
+        h5: {
+          fontSize: '1rem',
+        },
+        h6: {
+          fontSize: '.8rem',
+        },
+      }
     }
   }
 };
