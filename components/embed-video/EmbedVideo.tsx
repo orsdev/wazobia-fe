@@ -5,7 +5,7 @@ import { Button, ProviderOptions, SelectBox, TextBox } from "@/components";
 import { useModalContext } from "@/contexts/modal";
 
 const ValidationSchema = Yup.object({
-  url: Yup.string().required("Please, enter url"),
+  url: Yup.string().url("Invalid link").required("Please, enter url"),
   provider: Yup.string().required("Select an option"),
 });
 
