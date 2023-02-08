@@ -13,7 +13,7 @@ import {
 import { forwardRef } from "react";
 import PlusIcon from "remixicon-react/AddLineIcon";
 import ImageIcon from "remixicon-react/ImageFillIcon";
-import VideoIcon from "remixicon-react/videoLineIcon";
+import VideoIcon from "remixicon-react/VideoFillIcon";
 import LinkIcon from "remixicon-react/LinkMIcon";
 import { useModalContext } from "@/contexts/modal";
 
