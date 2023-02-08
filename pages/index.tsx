@@ -8,37 +8,34 @@ const Editor = dynamic(() => import("../components/editor"), {
   ssr: false,
 });
 
-const Modal = dynamic(async () => await (await import("../components")).Modal, {
+const Modal = dynamic(async () => (await import("../components")).Modal, {
   ssr: false,
 });
 
 const EmbedVideo = dynamic(
-  async () => await (await import("../components")).EmbedVideo,
+  async () => (await import("../components")).EmbedVideo,
   {
     ssr: false,
   }
 );
 
 const EmbedSocial = dynamic(
-  async () => await (await import("../components")).EmbedSocial,
+  async () => (await import("../components")).EmbedSocial,
   {
     ssr: false,
   }
 );
 
 const EmbedImage = dynamic(
-  async () => await (await import("../components")).EmbedImage,
+  async () => (await import("../components")).EmbedImage,
   {
     ssr: false,
   }
 );
 
-const PostButton = dynamic(
-  async () => await (await import("../components")).Button,
-  {
-    ssr: false,
-  }
-);
+const PostButton = dynamic(async () => (await import("../components")).Button, {
+  ssr: false,
+});
 
 export default function Home() {
   const { showVideoModal, showSocialModal, showImageModal, closeModal } =
@@ -100,12 +97,15 @@ export default function Home() {
 
       {/* Embed Social Modal */}
       <Modal isOpen={showSocialModal} onClose={closeModal}>
-        <EmbedSocial />
+        <EmbedSocial
+          editorState={editorState}
+          setEditorState={setEditorState}
+        />
       </Modal>
 
       {/* Embed Image Modal */}
       <Modal isOpen={showImageModal} onClose={closeModal}>
-        <EmbedImage />
+        <EmbedImage editorState={editorState} setEditorState={setEditorState} />
       </Modal>
     </>
   );
