@@ -2,6 +2,7 @@ import { Stack } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Button, ProviderOptions, SelectBox, TextBox } from "@/components";
+import { useModalContext } from "@/contexts/modal";
 
 const ValidationSchema = Yup.object({
   url: Yup.string().required("Please, enter url"),
@@ -9,6 +10,8 @@ const ValidationSchema = Yup.object({
 });
 
 export const EmbedVideo = () => {
+  const { closeModal } = useModalContext();
+
   const formik = useFormik({
     initialValues: {
       url: "",
@@ -37,6 +40,7 @@ export const EmbedVideo = () => {
           type="button"
           onClick={() => {
             formik.resetForm();
+            closeModal();
           }}
         />
       </Stack>
