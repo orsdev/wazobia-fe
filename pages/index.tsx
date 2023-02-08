@@ -8,6 +8,13 @@ const Editor = dynamic(() => import("../components/editor"), {
   ssr: false,
 });
 
+const PostDefaultTitle = dynamic(
+  async () => (await import("../components")).PostTitle,
+  {
+    ssr: false,
+  }
+);
+
 const Modal = dynamic(async () => (await import("../components")).Modal, {
   ssr: false,
 });
@@ -52,6 +59,7 @@ export default function Home() {
     <>
       <Flex
         py="80px"
+        px="20px"
         position="relative"
         w="full"
         _before={{
@@ -72,6 +80,10 @@ export default function Home() {
             rounded="4px"
             pos="relative"
           >
+            <PostDefaultTitle
+              editorState={editorState}
+              setEditorState={setEditorState}
+            />
             <Editor
               editorState={editorState}
               handleChange={onEditorStateChange}

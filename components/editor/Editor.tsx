@@ -48,6 +48,23 @@ export const Editor: FC<EditorProps> = ({ handleChange, editorState }) => {
             "textAlign",
             "history",
           ],
+          blockType: {
+            inDropdown: true,
+            options: [
+              "H1",
+              "H2",
+              "H3",
+              "H4",
+              "H5",
+              "H6",
+              "Normal",
+              "Blockquote",
+              "Code",
+            ],
+            className: undefined,
+            component: undefined,
+            dropdownClassName: undefined,
+          },
           inline: {
             inDropdown: false,
             className: undefined,
