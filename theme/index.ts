@@ -29,16 +29,17 @@ export const theme = {
 
       ".editor__wrapper": {
         h1: {
-          fontSize: '3rem',
+          fontSize: '2.5rem',
+          fontWeight: 700
         },
         h2: {
-          fontSize: '2.5rem',
-        },
-        h3: {
           fontSize: '2rem',
         },
+        h3: {
+          fontSize: '1.7rem',
+        },
         h4: {
-          fontSize: '1.5rem',
+          fontSize: '1.4rem',
         },
         h5: {
           fontSize: '1rem',
@@ -46,6 +47,19 @@ export const theme = {
         h6: {
           fontSize: '.8rem',
         },
+      },
+
+      ".editor__container": {
+
+        a: {
+          color: 'blue',
+          cursor: 'pointer',
+
+          _hover: {
+            textDecoration: 'underline',
+          }
+
+        }
       }
     }
   }
