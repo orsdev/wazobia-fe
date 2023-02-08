@@ -23,7 +23,7 @@ const EmbedVideo = dynamic(
 );
 
 export default function Home() {
-  const { showSocialModal, closeModal } = useModalContext();
+  const { showVideoModal, closeModal } = useModalContext();
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   );
@@ -63,7 +63,7 @@ export default function Home() {
           />
         </Box>
       </Flex>
-      <Modal isOpen={showSocialModal} onClose={closeModal}>
+      <Modal isOpen={showVideoModal} onClose={closeModal}>
         <EmbedVideo />
       </Modal>
     </>
