@@ -1,8 +1,5 @@
 export const ProviderOptions = [
-  { label: 'Facebook', value: 'Facebook' },
-  { label: 'Tiktok', value: 'Tiktok' },
-  { label: 'Twitter', value: 'Twitter' },
-  { label: 'Instagram', value: 'Instagram' },
-  { label: 'LinkedIn', value: 'Linkedin' },
+  { label: 'Vimeo', value: 'Vimeo' },
+  { label: 'Dailymotion', value: 'Dailymotion' },
   { label: 'Youtube', value: 'Youtube' },
 ]
