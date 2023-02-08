@@ -10,6 +10,7 @@ export const PostTitle = ({
   useEffect(() => {
     if (!editorState) return;
     insertIntoEditor();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const insertIntoEditor = async () => {
