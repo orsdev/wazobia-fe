@@ -1,5 +1,5 @@
 export * from './dropdown-menu'
 export * from './editor'
 export * from './modal'
-export * from './embed-social'
+export * from './embed-video'
 export * from './form'

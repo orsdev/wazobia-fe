@@ -1,4 +1,4 @@
-import { Box, Stack } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Button, ProviderOptions, SelectBox, TextBox } from "@/components";
@@ -8,7 +8,7 @@ const ValidationSchema = Yup.object({
   provider: Yup.string().required("Select an option"),
 });
 
-export const EmbedSocial = () => {
+export const EmbedVideo = () => {
   const formik = useFormik({
     initialValues: {
       url: "",
