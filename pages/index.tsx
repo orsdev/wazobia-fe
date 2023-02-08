@@ -1,6 +1,7 @@
 import { useModalContext } from "@/contexts/modal";
 import { Box, Flex } from "@chakra-ui/react";
-import { EditorState } from "draft-js";
+import { convertToRaw, EditorState } from "draft-js";
+import draftToHtml from "draftjs-to-html";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 
@@ -55,6 +56,12 @@ export default function Home() {
     setEditorState(editorState);
   };
 
+  const postToServer = () => {
+    const content = draftToHtml(convertToRaw(editorState.getCurrentContent()));
+    console.log(content);
+    alert("Posted to server");
+  };
+
   return (
     <>
       <Flex
@@ -97,6 +104,7 @@ export default function Home() {
                 bg: "_primary.100",
                 color: "white",
               }}
+              onClick={postToServer}
             />
           </Flex>
         </Box>
