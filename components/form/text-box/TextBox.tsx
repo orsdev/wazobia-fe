@@ -6,18 +6,23 @@ interface InputProps {
   name: string;
   placeholder_text?: string;
   label: string;
+  handleChange?(value: string): void;
+  isReadOnly?: boolean;
 }
 
 export const TextBox: FC<InputProps> = ({
   name,
   label,
   formik,
+  handleChange,
+  isReadOnly = false,
   placeholder_text = "",
 }) => {
   return (
     <Box>
       <FormControl
         isInvalid={formik?.touched[name] && formik?.errors[name]?.length > 0}
+        isReadOnly={isReadOnly}
       >
         <FormLabel
           color="_accent.100"
@@ -37,6 +42,9 @@ export const TextBox: FC<InputProps> = ({
           height="44px"
           color="_accent.100"
           w="full"
+          _focus={{
+            borderColor: isReadOnly ? "_highlight.400" : "initial",
+          }}
           _placeholder={{
             color: "_accent.100",
             opacity: 0.7,
@@ -47,7 +55,10 @@ export const TextBox: FC<InputProps> = ({
             outline: "none",
             boxShadow: "none",
           }}
-          onChange={formik.handleChange}
+          onChange={(event) => {
+            formik.handleChange(event);
+            handleChange && handleChange(event.target.value);
+          }}
           onBlur={formik.handleBlur}
           value={formik.values[name]}
         />
